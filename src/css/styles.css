@@ -40,6 +40,15 @@ body.light-mode {
     color: black;
 }
 
+body.light-mode .navbar {
+    background-color: #f8f9fa !important;
+}
+
+body.light-mode .navbar a {
+    color: black !important;
+}
+
+
 .btn-anim {
     transition: 0.3s;
 }
