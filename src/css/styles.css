@@ -16,3 +16,11 @@ body.light-mode {
     background-color: white;
     color: black;
 }
+
+.btn-anim {
+    transition: 0.3s;
+}
+
+.btn-anim:hover {
+    transform: scale(1.05);
+}
