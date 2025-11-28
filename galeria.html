@@ -18,41 +18,68 @@
 
     <main class="flex-grow-1 pt-5">
         <section class="container my-5 fade-section pt-5">
-            <h1 class="text-center mb-4">Mi galería</h1>
-            <p class="text-center">Aquí muestro mis dibujos y pinturas.</p>
+    <h1 class="text-center mb-4">Mi galería</h1>
+    <p class="text-center">Aquí muestro mis dibujos y pinturas.</p>
 
-            <div class="row g-4 mt-4">
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/pintura1.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/pintura2.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/pintura3.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/pintura4.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/pintura5.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/dibujo1.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/dibujo2.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/dibujo 3.jpg" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-4">
-                    <img src="./src/imgs/galeria/dibujo 4.jpg" class="img-fluid rounded shadow">
-                </div>
-            </div> <br>
-            <p class="text-center">Imagenes curiosas</p>
+    <div class="text-center mb-4">
+        <label for="categoriaGaleria" class="form-label fw-bold">Selecciona una categoría:</label>
+        <select id="categoriaGaleria" class="form-select w-auto d-inline-block">
+            <option value="arte">Mi arte</option>
+            <option value="fotos">Fotos lindas</option>
+            <option value="Fotos_Duras">Fotos Durisimas</option>
+        </select>
+    </div>
 
-        </section>
+    <div id="contenidoGaleria" class="row g-4 mt-4">
+        
+</section>
+
+<script>
+const galeriaData = {
+    arte: [
+        "./src/imgs/galeria/pintura1.jpg",
+        "./src/imgs/galeria/pintura2.jpg",
+        "./src/imgs/galeria/pintura3.jpg",
+        "./src/imgs/galeria/pintura4.jpg",
+        "./src/imgs/galeria/pintura5.jpg",
+        "./src/imgs/galeria/dibujo1.jpg",
+        "./src/imgs/galeria/dibujo2.jpg",
+        "./src/imgs/galeria/dibujo 3.jpg",
+        "./src/imgs/galeria/dibujo 4.jpg"
+    ],
+    fotos: [
+        "./src/imgs/galeria/foto1.jpg",
+        "./src/imgs/galeria/foto2.jpg",
+        "./src/imgs/galeria/foto3.jpg"
+    ],
+    Fotos_Duras: [
+        "./src/imgs/galeria/fotos duras/fotochi1.jpg",
+        "./src/imgs/galeria/fotos duras/ganador.jpg",
+        "./src/imgs/galeria/fotos duras/pollo.jpg"
+    ]
+};
+
+const select = document.getElementById("categoriaGaleria");
+const contenido = document.getElementById("contenidoGaleria");
+
+function mostrarGaleria(categoria) {
+    contenido.innerHTML = ""; 
+    galeriaData[categoria].forEach(src => {
+        const col = document.createElement("div");
+        col.className = "col-md-4";
+        col.innerHTML = `<img src="${src}" class="img-fluid rounded shadow">`;
+        contenido.appendChild(col);
+    });
+}
+
+
+mostrarGaleria("arte");
+
+select.addEventListener("change", () => {
+    mostrarGaleria(select.value);
+});
+</script>
+
     </main>
 
     <footer class="text-center py-4 mt-5">
