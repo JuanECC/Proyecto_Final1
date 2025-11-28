@@ -6,3 +6,13 @@ fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
