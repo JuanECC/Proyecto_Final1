@@ -1,12 +1,27 @@
-const themeToggle = document.getElementById("themeToggle");
+document.addEventListener("DOMContentLoaded", () => {
 
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
-    document.body.classList.toggle("dark-mode");
+    const themeToggle = document.getElementById("themeToggle");
 
-     if (document.body.classList.contains("light-mode")) {
+    if (!themeToggle) return;
+
+    if (document.body.classList.contains("light-mode")) {
         themeToggle.textContent = "Modo Oscuro";
     } else {
         themeToggle.textContent = "Modo Claro";
     }
+
+    themeToggle.addEventListener("click", () => {
+        const body = document.body;
+
+        if (body.classList.contains("dark-mode")) {
+            body.classList.remove("dark-mode");
+            body.classList.add("light-mode");
+            themeToggle.textContent = "Modo Oscuro";
+        } else {
+            body.classList.remove("light-mode");
+            body.classList.add("dark-mode");
+            themeToggle.textContent = "Modo Claro";
+        }
+    });
+
 });

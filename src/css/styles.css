@@ -1,4 +1,4 @@
-/* Animación */
+
 .fade-in {
     animation: fade 1s ease-in-out;
 }
@@ -6,6 +6,9 @@
 @keyframes fade {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
@@ -44,11 +47,12 @@ body.light-mode .navbar {
     background-color: #f8f9fa !important;
 }
 
+body.light-mode a,
+body.light-mode p,
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
-body.light-mode h4,
-body.light-mode p {
+body.light-mode h4 {
     color: black !important;
 }
 
@@ -73,11 +77,10 @@ body.light-mode img.shadow {
     transform: scale(1.05);
 }
 
-.gallery-card img,
 img.shadow {
     transition: 0.3s ease-in-out;
 }
 
-.gallery-card img:hover {
+img.shadow:hover {
     transform: scale(1.03);
 }
