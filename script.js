@@ -1,14 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const themeToggle = document.getElementById("themeToggle");
 
     if (!themeToggle) return;
 
-    if (document.body.classList.contains("light-mode")) {
-        themeToggle.textContent = "Modo Oscuro";
-    } else {
-        themeToggle.textContent = "Modo Claro";
-    }
+    themeToggle.textContent = document.body.classList.contains("dark-mode") ? "Modo Claro" : "Modo Oscuro";
 
     themeToggle.addEventListener("click", () => {
         const body = document.body;
@@ -23,5 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
             themeToggle.textContent = "Modo Claro";
         }
     });
-
 });
