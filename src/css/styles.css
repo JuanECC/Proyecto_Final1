@@ -48,6 +48,13 @@ body.light-mode .navbar a {
     color: black !important;
 }
 
+body.light-mode .btn-outline-light {
+    color: black;
+    border-color: black;
+}
+
+
+
 
 .btn-anim {
     transition: 0.3s;
