@@ -1,4 +1,3 @@
-
 .fade-in {
     animation: fade 1s ease-in-out;
 }
@@ -7,6 +6,7 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -25,8 +25,13 @@ body.dark-mode p,
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
-body.dark-mode h4 {
+body.dark-mode h4,
+body.dark-mode footer {
     color: white !important;
+}
+
+body.dark-mode footer {
+    background-color: #000;
 }
 
 body.dark-mode .btn-outline-light {
@@ -52,8 +57,13 @@ body.light-mode p,
 body.light-mode h1,
 body.light-mode h2,
 body.light-mode h3,
-body.light-mode h4 {
+body.light-mode h4,
+body.light-mode footer {
     color: black !important;
+}
+
+body.light-mode footer {
+    background-color: #f8f9fa;
 }
 
 body.light-mode .navbar a {
@@ -67,6 +77,10 @@ body.light-mode .btn-outline-light {
 
 body.light-mode img.shadow {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.18);
+}
+
+footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-anim {
@@ -84,3 +98,23 @@ img.shadow {
 img.shadow:hover {
     transform: scale(1.03);
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
