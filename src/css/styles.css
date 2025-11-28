@@ -44,6 +44,14 @@ body.light-mode .navbar {
     background-color: #f8f9fa !important;
 }
 
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode p {
+    color: black !important;
+}
+
 body.light-mode .navbar a {
     color: black !important;
 }
